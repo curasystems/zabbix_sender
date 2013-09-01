@@ -4,10 +4,11 @@ You just need your items and the zabbix_agentd.conf path.
 Server information and Port is read out of the zabbix agent config.
 
 
-### Example
+### Usage and example
 
 ```
-var ZabbixSender = require('./lib/sender');
+var path = require('path');
+var ZabbixSender = require('zabbix-sender');
 
 var configPath = 'C:\\Development\\private\\aortmann\\zabbix\\zabbix_agentd.conf';
 var itemKeysAndValuesToSend = {
@@ -16,7 +17,8 @@ var itemKeysAndValuesToSend = {
 	'error.message': 'text',
 	'another.key': 1
 };
+var zabbixSender = path.join(process.cwd(), 'node_modules', 'zabbix-sender', 'bin', 'zabbix_sender');
 
-var sender = new ZabbixSender(configPath, itemKeysAndValuesToSend);
+var sender = new ZabbixSender(configPath, itemKeysAndValuesToSend, zabbixSender);
 sender.send();
 ```
