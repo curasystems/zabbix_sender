@@ -1,3 +1,6 @@
+// npm module
+// var ZabbixSender = require('zabbix-sender');
+// git cloned
 var ZabbixSender = require('./index');
 
 var configPath = 'C:\\zabbix\\zabbix_agentd.conf';
