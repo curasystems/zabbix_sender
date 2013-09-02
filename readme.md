@@ -20,6 +20,22 @@ var itemKeysAndValuesToSend = {
     'another.key': 1
 };
 
-var sender = new ZabbixSender(configPath, itemKeysAndValuesToSend);
+
+// With config file of zabbix_agent
+var sender = new ZabbixSender(configPath, itemKeysAndValuesToSend, null, null, null);
 sender.send();
+
+// Without config file you need to specify zabbixHost and monitoredHostName
+var zabbixHost = 127.0.0.1;
+var zabbixPort = 10051;
+var monitoredHostName = 'HOSTNAME';
+
+var sender = new ZabbixSender(null, itemKeysAndValuesToSend, zabbixHost, zabbixPort, monitoredHostName);
+sender.send();
+```
+
+### Set permission on solaris to execute the zabbix_sender
+
+```
+chmod +x /.../zabbix-sender/bin/sunos/zabbix_sender
 ```
