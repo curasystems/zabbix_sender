@@ -1,5 +1,5 @@
 // npm module
-// var ZabbixSender = require('zabbix-sender');
+// var ZabbixSender = require('zabbix_sender');
 // git cloned
 var ZabbixSender = require('./index');
 

@@ -1,3 +1,9 @@
+zabbix_sender
+=============
+
+Simple node.js zabbix agent sender wrapper (agent for windows and smartos included others welcome)
+
+
 # Zabbix-Sender to send information to a Zabbix-Server
 
 You just need your items and the zabbix_agentd.conf path.
@@ -8,7 +14,7 @@ Server information and Port is read out of the zabbix agent config.
 
 ```
 // npm module
-// var ZabbixSender = require('zabbix-sender');
+// var ZabbixSender = require('zabbix_sender');
 // git cloned
 var ZabbixSender = require('./index');
 
@@ -32,10 +38,4 @@ var monitoredHostName = 'HOSTNAME';
 
 var sender = new ZabbixSender(zabbixHost, zabbixPort, monitoredHostName);
 sender.send(itemsToSend);
-```
-
-### Set permission on solaris to execute the zabbix_sender
-
-```
-chmod +x /.../zabbix-sender/bin/sunos/zabbix_sender
 ```
