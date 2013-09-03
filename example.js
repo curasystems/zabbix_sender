@@ -4,22 +4,22 @@
 var ZabbixSender = require('./index');
 
 var configPath = 'C:\\zabbix\\zabbix_agentd.conf';
-var itemKeysAndValuesToSend = {
+var itemsToSend = {
     'item.key': 'value',
-    'why.dont': 0,
-    'error.message': 'text',
-    'another.key': 1
+    'why.dont': 1000,
+    'error.message': 'example error message',
+    'another.key': false
 };
 
 
 // With config file of zabbix_agent
-var sender = new ZabbixSender(configPath, itemKeysAndValuesToSend, null, null, null);
-sender.send();
+var sender = new ZabbixSender(configPath);
+sender.send(itemsToSend);
 
-// Without config file you need to specify zabbixHost and monitoredHostName
-var zabbixHost = 127.0.0.1;
+// Without config file you need to specify zabbixHost and monitoredHostName (host name as defined in zabbix!)
+var zabbixHost = '127.0.0.1';
 var zabbixPort = 10051;
 var monitoredHostName = 'HOSTNAME';
 
-var sender = new ZabbixSender(null, itemKeysAndValuesToSend, zabbixHost, zabbixPort, monitoredHostName);
-sender.send();
+var sender = new ZabbixSender(zabbixHost, zabbixPort, monitoredHostName);
+sender.send(itemsToSend);
