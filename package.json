@@ -1,0 +1,25 @@
+{
+  "name": "zabbix_sender",
+  "version": "0.0.3",
+  "description": "Simple node.js zabbix agent sender wrapper (agent for windows and smartos included others welcome)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:curasystems/zabbix_sender.git"
+  },
+  "keywords": [
+    "zabbix",
+    "sender",
+    "zabbix_sender",
+    "zabbix-sender",
+    "agent"
+  ],
+  "author": "Adrian Ortmann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/curasystems/zabbix_sender/issues"
+  }
+}
